@@ -45,8 +45,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var sum = __webpack_require__(1);
+	var res = sum(4, 6);
 
-	console.log('I am the main thing');
+	console.log('I am the main thing', res);
 
 /***/ },
 /* 1 */

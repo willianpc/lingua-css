@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./dist/**/*",
-    "copy_to_dist": "node ./node_modules/copy ./src/index.html ./dist",
+    "copy_to_dist": "cp ./src/index.html ./dist",
+    "copy_to_dist_win": "copy .\\src\\index.html .\\dist",
     "serve": "http-server -p 9000 ./dist",
-    "start": "npm run clean && npm run copy_to_dist && webpack && npm run serve"
+    "watch": "echo \"watching\" && watch \"npm build\" ./src",
+    "build": "npm run clean && npm run copy_to_dist_win && webpack",
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
