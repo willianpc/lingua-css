@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./dist/**/*",
     "copy_to_dist": "node ./node_modules/copy ./src/index.html ./dist",
-    "start": "npm run clean && npm run copy_to_dist && webpack"
+    "serve": "http-server -p 9000 ./dist",
+    "start": "npm run clean && npm run copy_to_dist && webpack && npm run serve"
   },
   "repository": {
     "type": "git",
