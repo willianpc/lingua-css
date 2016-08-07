@@ -1,2 +1,2 @@
 # lingua
-A CSS based internationalization
+A CSS based internationalization tool
