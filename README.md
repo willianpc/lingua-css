@@ -63,12 +63,12 @@ As you might have guessed, the language bundle file must be a JSON by following 
 }
 ```
 
-You can also import the library, and make use of the method buildLang. For example:
+You can also import the library, and use it as a method. For example:
 
 ```javascript
 var lingua = require('lingua');
 
-lingua.buildLang(bundleFile, function (resultCSS) {
+lingua(bundleFile, resultCSS => {
     doSomething(resultCSS);
 });
 

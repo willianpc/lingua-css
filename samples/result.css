@@ -1,0 +1,30 @@
+/*Language: default*/
+.title:after {
+	content: "Greetings!";
+}
+.name:after {
+	content: "name";
+}
+.message:after {
+	content: "This is a simple test at how to use lingua";
+}
+/*Language: pt*/
+.title:lang(pt)::after {
+	content: "Bem vindo!";
+}
+.name:lang(pt)::after {
+	content: "nome";
+}
+.message:lang(pt)::after {
+	content: "Este é um teste simples com o lingua";
+}
+/*Language: es*/
+.title:lang(es)::after {
+	content: "Hola";
+}
+.name:lang(es)::after {
+	content: "nombre";
+}
+.message:lang(es)::after {
+	content: "Esta es una prueba sencilla en la forma de utilizar lingua";
+}

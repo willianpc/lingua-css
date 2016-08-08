@@ -10,16 +10,9 @@ function buildLang (filename, callback) {
         currentLanguage,
         langSelector;
 
-    // if (!args.length) {
-    //     console.log('Please, provide a file...');
-    //     process.exit(-1);
-    // }
-
     if (!filename) {
         throw new Error('filename not provided');
     }
-
-    //filename = args[0];
 
     try {
         languageBundle = require('./' + filename);
@@ -48,19 +41,16 @@ function buildLang (filename, callback) {
     if (callback) callback(stringBuffer);
 }
 
-module.exports = buildLang;
-
 if (args.length >= 2) {
-
     var fs = require('fs');
 
     buildLang(args[0], buffer => {
         fs.writeFile(args[1], buffer);
     });
-
-    //process.stdout.write();
 } else if (args.length === 1) {
     buildLang(args[0], buffer => {
         process.stdout.write(buffer);
     });
 }
+
+module.exports = buildLang;

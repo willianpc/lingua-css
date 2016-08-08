@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>tool test</title>
+    <link rel="stylesheet" type="text/css" href="result.css">
+</head>
+<body>
+<h3>lingua - A CSS based internationalization tool</h3>
+
+<div id="content">
+    <h4 class="title"></h4>
+    <p class="message"></p>
+
+    <span>Languages</span>:
+    <a data-lang="" href="#">Default (English)</a> |
+    <a data-lang="pt" href="#">Portuguese</a> |
+    <a data-lang="es" href="#">Spanish</a>
+</div>
+
+
+<script type="text/javascript">
+var content = document.querySelector('#content');
+
+    content.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        var target = ev.target || ev.srcElement,
+            lang;
+
+        if (target.tagName === 'A') {
+            lang = target.getAttribute('data-lang');
+            document.body.lang = lang;
+        }
+    }, false);
+
+
+</script>
+</body>
+</html>

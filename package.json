@@ -1,17 +1,10 @@
 {
   "name": "lingua",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A CSS based internationalization tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf ./dist/**/*",
-    "copy_to_dist": "cp ./src/index.html ./dist",
-    "copy_to_dist_win": "copy .\\src\\index.html .\\dist",
-    "serve": "http-server -p 9000 ./dist",
-    "watch": "echo \"watching\" && watch \"npm build\" ./src",
-    "build": "npm run clean && npm run copy_to_dist_win && webpack",
-    "start": "npm run build && npm run serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -29,13 +22,5 @@
   },
   "homepage": "https://github.com/chambs/lingua#readme",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.13.2",
-    "copy": "^0.3.0",
-    "live-reload": "^1.1.0",
-    "rimraf": "^2.5.4",
-    "webpack": "^1.13.1"
   }
 }
