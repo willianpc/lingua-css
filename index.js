@@ -1,6 +1,3 @@
-var args = process.argv.slice(2);
-process.title = 'lingua';
-
 function buildLang (filename, callback) {
     var filename,
         languageBundle,
@@ -39,18 +36,6 @@ function buildLang (filename, callback) {
     }
 
     if (callback) callback(stringBuffer);
-}
-
-if (args.length >= 2) {
-    var fs = require('fs');
-
-    buildLang(args[0], buffer => {
-        fs.writeFile(args[1], buffer);
-    });
-} else if (args.length === 1) {
-    buildLang(args[0], buffer => {
-        process.stdout.write(buffer);
-    });
 }
 
 module.exports = buildLang;
