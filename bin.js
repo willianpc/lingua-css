@@ -2,7 +2,9 @@
 var lingua = require('./'),
     args = process.argv.slice(2),
     optionList = ['-o', '-i', '-t'],
-    parsedOptions;
+    parsedOptions,
+    path = require('path');
+
 
 // parse options provided with the command
 function parseOptions (options) {
@@ -31,9 +33,13 @@ function parseOptions (options) {
 }
 
 function buildResult ({filename, output = null, valueTemplate = '.{value}'}) {
+
+  if (!path.isAbsolute(filename)) {
+    filename = '../../' + filename;
+  }
+
   if (output) {
     var fs = require('fs');
-
     lingua({
       filename,
       valueTemplate,
