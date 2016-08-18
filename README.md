@@ -63,6 +63,17 @@ Or, install it globally:
       },
     ```
 
+5. You can also import the library, and use it as a method. For example:
+
+    ```javascript
+    var linguacss = require('linguacss');
+    
+    linguacss({
+      filename: __dirname + '/bundle.json', 
+      callback: buffer => { console.log(buffer); }
+    });
+    ```
+
 ### Language Bundle File
 
 The language bundle file must be a JSON following this structure displayed below.
@@ -89,18 +100,6 @@ Each language must start with the language acronym, with the exception of the de
         "message": "Esta es una prueba sencilla en la forma de utilizar lingua"
     }
 }
-```
-
-You can also import the library, and use it as a method. For example:
-
-```javascript
-var linguacss = require('linguacss');
-
-linguacss({
-  filename: __dirname + '/bundle.json', 
-  callback: buffer => { console.log(buffer); }
-});
-
 ```
 
 ## How it works?
