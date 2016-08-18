@@ -53,7 +53,7 @@ function buildResult ({filename, output = null, valueTemplate = '.{value}'}) {
 if (args.length == 2 && !args[0].match(/^\-i|^\-o|^\-t/)) {
     buildResult({filename: args[0], output: args[1]});
 } else if (args.length === 1) {
-    buildResult(args[0]);
+    buildResult({filename: args[0]});
 } else if (args.length >= 2) {
   parsedOptions = parseOptions(args);
 
@@ -62,7 +62,6 @@ if (args.length == 2 && !args[0].match(/^\-i|^\-o|^\-t/)) {
     output: parsedOptions['-o'],
     valueTemplate: parsedOptions['-t']
   });
-
 } else {
   throw new Error('Please provide at least a language bundle');
 }
