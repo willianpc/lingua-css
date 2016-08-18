@@ -1,6 +1,6 @@
 {
-  "name": "lingua",
-  "version": "0.1.0",
+  "name": "linguacss",
+  "version": "1.0.0",
   "description": "A CSS based internationalization tool",
   "main": "index.js",
   "scripts": {
