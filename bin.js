@@ -35,7 +35,7 @@ function parseOptions (options) {
 function buildResult ({filename, output = null, valueTemplate = '.{value}'}) {
 
   if (!path.isAbsolute(filename)) {
-    filename = '../../' + filename;
+    filename = process.cwd() + '/' + filename;
   }
 
   if (output) {
