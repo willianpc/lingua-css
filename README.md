@@ -24,13 +24,19 @@ So, let's say we want to translate a 'title' key in English, Spanish and Portugu
 
 ## Instalation
 
-Todo
+Use npm to install Lingua CSS (recommended):
+
+    $ npm install linguacss
+
+Or, install it globally:
+
+    $ npm install -g linguacss
 
 ## Usage
 
 ### Command line
 
-1. You can run the following command if you want the result in the **stdout**:
+1. You can run the following command (assuming you installed globally) if you want the result in the **stdout**:
 
         $ lingua-css ./language-bundle.json
 
@@ -46,6 +52,17 @@ The flag options are straightforward, however it's worth explaining them:
  * **-i** is the input file path and filename
  * **-o** is the output file path and filename
  * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value
+
+4. Use Lingua CSS as an npm script. This is the most recommended way, as you don't have to install the package globally.
+
+In your package.json, add the following entry to scripts:
+
+```javascript
+  "scripts": {
+    "linguacss": "linguacss ./language_bundle.json ./result.css"
+  },
+
+```
 
 ### Language Bundle File
 
@@ -78,10 +95,11 @@ Each language must start with the language acronym, with the exception of the de
 You can also import the library, and use it as a method. For example:
 
 ```javascript
-var lingua = require('lingua-css');
+var linguacss = require('linguacss');
 
-lingua(bundleFile, resultCSS => {
-    doSomething(resultCSS);
+linguacss({
+  filename: __dirname + '/bundle.json', 
+  callback: buffer => { console.log(buffer); }
 });
 
 ```
