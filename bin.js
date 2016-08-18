@@ -50,17 +50,11 @@ function buildResult ({filename, output = null, valueTemplate = '.{value}'}) {
   }
 }
 
-// command input-filename output-filename
-if (args.length == 2) {
+if (args.length == 2 && !args[0].match(/^\-i|^\-o|^\-t/)) {
     buildResult({filename: args[0], output: args[1]});
-
-// command input-filename
-// in this case, output is stdout
 } else if (args.length === 1) {
     buildResult(args[0]);
-
-// assumes command is using options
-} else if (args.length > 2) {
+} else if (args.length >= 2) {
   parsedOptions = parseOptions(args);
 
   buildResult({

@@ -32,15 +32,15 @@ Todo
 
 1. You can run the following command if you want the result in the **stdout**:
 
-        $ lingua-css language-bundle.json
+        $ lingua-css ./language-bundle.json
 
 2. You can also pass the output file as a second option:
 
-        $ lingua-css language-bundle.json ./css/i18n.css
+        $ lingua-css ./language-bundle.json ./css/i18n.css
 
 3. A more sofisticated way is using flag options:
 
-        $ lingua-css -i language-bundle.json -o ./css/i18n.css -t [data-language=\"{value}\"]
+        $ lingua-css -i ./language-bundle.json -o ./css/i18n.css -t [data-language=\"{value}\"]
 
 The flag options are straightforward, however it's worth explaining them:
  * **-i** is the input file path and filename
