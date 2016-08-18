@@ -48,19 +48,19 @@ Or, install it globally:
 
         $ lingua-css -i ./language-bundle.json -o ./css/i18n.css -t [data-language=\"{value}\"]
 
-The flag options are straightforward, however it's worth explaining them:
- * **-i** is the input file path and filename
- * **-o** is the output file path and filename
- * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value
+    The flag options are straightforward, however it's worth explaining them:
+    * **-i** is the input file path and filename
+    * **-o** is the output file path and filename
+    * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value
 
 4. Use Lingua CSS as an npm script. This is the most recommended way, as you don't have to install the package globally.
 
-In your package.json, add the following entry to scripts:
+    In your package.json, add the following entry to scripts:
 
-```javascript
-  "scripts": {
-    "linguacss": "linguacss ./language_bundle.json ./result.css"
-  },
+    ```javascript
+      "scripts": {
+        "linguacss": "linguacss ./language_bundle.json ./result.css"
+      },
 
 ```
 
