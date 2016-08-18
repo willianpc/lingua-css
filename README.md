@@ -61,8 +61,7 @@ Or, install it globally:
       "scripts": {
         "linguacss": "linguacss ./language_bundle.json ./result.css"
       },
-
-```
+    ```
 
 ### Language Bundle File
 
