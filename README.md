@@ -1,9 +1,7 @@
-# lingua
-### A CSS based internationalization tool
+# Lingua CSS
+## A CSS based internationalization tool
 
-Lingua means "language" in Portuguese, but can also mean "tongue", which gives a pretty clever idea for a logo :P
-
-Back to what is relevant, lingua takes advantage of the CSS pseudo class lang, and changes the language based on it, which makes it work as an interesting internationalization tool.
+Lingua CSS takes advantage of the CSS pseudo class lang, and changes the language based on it, which makes it work as an interesting internationalization tool.
 
 So, let's say we want to translate a 'title' key in English, Spanish and Portuguese, then lingua will generate the following:
 
@@ -24,21 +22,35 @@ So, let's say we want to translate a 'title' key in English, Spanish and Portugu
 }
 ```
 
-### Instalation
+## Instalation
 
 Todo
 
-### Usage
+## Usage
 
-For command line, you can call lingua and provide the language bundle file:
+### Command line
 
-```shell
-node lingua language_bundle.json
-```
+1. You can run the following command if you want the result in the **stdout**:
 
-By default, the output will be written in stdout, so you can conveniently use it on gulp or simply pipe it to a file.
+        $ lingua-css language-bundle.json
 
-As you might have guessed, the language bundle file must be a JSON by following this structure:
+2. You can also pass the output file as a second option:
+
+        $ lingua-css language-bundle.json ./css/i18n.css
+
+3. A more sofisticated way is using flag options:
+
+        $ lingua-css -i language-bundle.json -o ./css/i18n.css -t [data-language=\"{value}\"]
+
+The flag options are straightforward, however it's worth explaining them:
+ * **-i** is the input file path and filename
+ * **-o** is the output file path and filename
+ * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value
+
+### Language Bundle File
+
+The language bundle file must be a JSON following this structure displayed below.
+Each language must start with the language acronym, with the exception of the default language, whose name must be "default", as follows:
 
 
 ```json
@@ -66,10 +78,45 @@ As you might have guessed, the language bundle file must be a JSON by following 
 You can also import the library, and use it as a method. For example:
 
 ```javascript
-var lingua = require('lingua');
+var lingua = require('lingua-css');
 
 lingua(bundleFile, resultCSS => {
     doSomething(resultCSS);
 });
 
+```
+
+## How it works?
+
+Once you have built your CSS file, import it to your HTML page and add the CSS selectors to the elements you want the text to be displayed. For example:
+
+```html
+    <div id="content">
+        <h4 class="title"></h4>
+        <p class="message"></p>
+    </div>
+```
+
+The CSS language bundle will apply the classes **title** and **message** by adding the texts according to the default language, like this:
+
+```html
+    <div id="content">
+        <h4 class="title">Greetings</h4>
+        <p class="message">This is a simple test at how to use lingua</p>
+    </div>
+```
+
+Then, if you want to change language, simply change the attribute lang from your <body> tag:
+
+```javascript
+    document.body.lang = 'pt';
+```
+
+This will automatically change the CSS classes (or whatever selector you decided to use) and the text will be updated:
+
+```html
+    <div id="content">
+        <h4 class="title">Bem vindo!</h4>
+        <p class="message">Este é um teste simples com o lingua</p>
+    </div>
 ```
