@@ -144,7 +144,7 @@ The CSS language bundle will apply the classes **title** and **message** by addi
     </div>
 ```
 
-Then, if you want to change language, simply change the attribute lang from your <body> tag:
+Then, if you want to change language, simply change the attribute lang from your `<body>` tag:
 
 ```javascript
     document.body.lang = 'pt';
