@@ -1,6 +1,6 @@
 {
   "name": "linguacss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A CSS based internationalization tool",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   },
   "homepage": "https://github.com/chambs/lingua#readme",
   "devDependencies": {
+  },
+  "engines": {
+    "node": ">=3.6.0"
   }
 }
