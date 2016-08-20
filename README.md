@@ -92,7 +92,7 @@ A callback function who will be called with the generated CSS style as the only 
 
 A string containing the CSS selector to be used for each text key.
 
-It must contain the reserved expression {value} which will be replaced by the corresponding key. eg: [data-language="{value}"] with key 'message' will be converted to [data-language="message"].
+It must contain the reserved expression `{value}` which will be replaced by the corresponding key. eg: `[data-language="{value}"]` with key 'message' will be converted to `[data-language="message"]`.
 
 By default, Lingua CSS will use a CSS class a selector
 
