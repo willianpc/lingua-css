@@ -3,7 +3,7 @@
 
 Lingua CSS takes advantage of the CSS pseudo class lang, and changes the language based on it, which makes it work as an interesting internationalization tool.
 
-So, let's say we want to translate a 'title' key in English, Spanish and Portuguese, then lingua will generate the following:
+So, let's say we want to translate a 'title' key in English, Spanish and Portuguese, so we provide a JSON structured language bundle file and lingua-css will output the following CSS:
 
 ```css
 /*Default language*/
@@ -22,7 +22,7 @@ So, let's say we want to translate a 'title' key in English, Spanish and Portugu
 }
 ```
 
-## Instalation
+## Installation
 
 Use npm to install Lingua CSS (recommended):
 
@@ -36,11 +36,11 @@ Or, install it globally:
 
 ### Command line
 
-1. You can run the following command (assuming you installed globally) if you want the result in the **stdout**:
+1. You can run lingua-css by providing an input language bundle file and the result will be output in **stdout**:
 
         $ lingua-css ./language-bundle.json
 
-2. You can also pass the output file as a second option:
+2. You can also pass an output file as a second option:
 
         $ lingua-css ./language-bundle.json ./css/i18n.css
 
@@ -51,9 +51,9 @@ Or, install it globally:
     The flag options are straightforward, however it's worth explaining them:
     * **-i** is the input file path and filename
     * **-o** is the output file path and filename
-    * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value
+    * **-t** is the template value for the CSS selector. You must provide {value} to be replaced by the correct value. The default is a CSS class. eg? .title
 
-4. Use Lingua CSS as an npm script. This is the most recommended way, as you don't have to install the package globally.
+4. Using Lingua CSS as an npm script. This is the most recommended way, as you don't have to install it globally.
 
     In your package.json, add the following entry to scripts:
 
@@ -74,7 +74,29 @@ Or, install it globally:
     });
     ```
 
-### Language Bundle File
+### Function options
+
+When using Lingua CSS as an imported library into your project code, you must provide an **options** object.
+The following attributes are available in the options:
+
+#### filename
+
+This option is mandatory, as it is the input language bundle used to generate the i18n CSS.
+The value must be a string containing a filename, including its path.
+
+#### callback
+
+A callback function who will be called with the generated CSS style as the only argument.
+
+#### valueTemplate
+
+A string containing the CSS selector to be used for each text key.
+
+It must contain the reserved expression {value} which will be replaced by the corresponding key. eg: [data-language="{value}"] with key 'message' will be converted to [data-language="message"].
+
+By default, Lingua CSS will use a CSS class a selector
+
+### Language Bundle File Structure 
 
 The language bundle file must be a JSON following this structure displayed below.
 Each language must start with the language acronym, with the exception of the default language, whose name must be "default", as follows:
