@@ -1,4 +1,4 @@
-# Lingua CSS
+# Lingua CSS - snapshot version 01
 ## A CSS based internationalization tool
 
 Lingua CSS takes advantage of the CSS pseudo class lang, and changes the language based on it, which makes it work as an interesting internationalization tool.
