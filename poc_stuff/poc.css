@@ -1,0 +1,69 @@
+/* default */
+[data-lng="title"]::after {
+  content: "Title argument is " attr(data-arg0);
+}
+
+[data-lng="descr"]::after {
+  content: "cool description";
+}
+
+[data-lng="item1"]::after {
+  content: attr(data-arg0) " bananas of " attr(data-arg1) " bananas";
+}
+
+[data-lng="item2"]::after {
+  content: "schonko";
+}
+
+[data-lng="item3"]::after {
+  content: "grapes";
+}
+
+
+
+
+/* en */
+
+
+[data-lng="title"]:lang(en)::after {
+  content: "lala is " attr(data-args);
+}
+
+[data-lng="descr"]:lang(en)::after {
+  content: "cool description";
+}
+
+[data-lng="item1"]:lang(en)::after {
+  content: attr(data-arg0) " bananas de " attr(data-arg1) " bananas";
+}
+
+[data-lng="item2"]:lang(en)::after {
+  content: "schonko";
+}
+
+[data-lng="item3"]:lang(en)::after {
+  content: "grapes";
+}
+
+/* lalala */
+
+
+[data-lng="title"]:lang(pt)::after {
+  content: "Novo Lingua CSS: " attr(data-args);
+}
+
+[data-lng="descr"]:lang(pt)::after {
+  content: "descricao da hora";
+}
+
+[data-lng="item1"]:lang(pt)::after {
+  content: "banana mesmo";
+}
+
+[data-lng="item2"]:lang(pt)::after {
+  content: "colate";
+}
+
+[data-lng="item3"]:lang(pt)::after {
+  content: "uviculas";
+}
